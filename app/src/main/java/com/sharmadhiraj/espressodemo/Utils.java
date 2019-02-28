@@ -1,16 +1,16 @@
 package com.sharmadhiraj.espressodemo;
 
-public class Utils {
+class Utils {
 
-    private static final String USERNAME = "admin";
-    private static final String PASSWORD = "12345";
+    static final String VALID_USERNAME = "admin";
+    static final String VALID_PASSWORD = "12345";
 
-    public static boolean isValidUsername(String username) {
-        return USERNAME.equals(username);
+    static boolean isValidUsername(String username) {
+        return VALID_USERNAME.equals(username);
     }
 
-    public static boolean isValidPassword(String password) {
-        return PASSWORD.equals(password);
+    static boolean isValidPassword(String password) {
+        return VALID_PASSWORD.equals(password);
     }
 
 }

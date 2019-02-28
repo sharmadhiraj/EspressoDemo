@@ -4,4 +4,6 @@
     <string name="txt_username">Username</string>
     <string name="txt_password">Password</string>
     <string name="txt_welcome_user">Welcome User !</string>
+    <string name="txt_invalid_username">Invalid Username</string>
+    <string name="txt_invalid_password">Invalid Password</string>
 </resources>

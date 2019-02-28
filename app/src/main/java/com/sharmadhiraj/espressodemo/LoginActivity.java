@@ -7,8 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class LoginActivity extends AppCompatActivity {
+import static com.sharmadhiraj.espressodemo.Utils.isValidPassword;
+import static com.sharmadhiraj.espressodemo.Utils.isValidUsername;
 
+public class LoginActivity extends AppCompatActivity {
 
     private EditText edtUsername;
     private EditText edtPassword;
@@ -30,10 +32,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login() {
-        if (!Utils.isValidUsername(edtUsername.getText().toString())) {
-            edtUsername.setError("Invalid Username");
-        } else if (!Utils.isValidPassword(edtPassword.getText().toString())) {
-            edtPassword.setError("Invalid Password");
+        if (!isValidUsername(edtUsername.getText().toString())) {
+            edtUsername.setError(getString(R.string.txt_invalid_username));
+        } else if (!isValidPassword(edtPassword.getText().toString())) {
+            edtPassword.setError(getString(R.string.txt_invalid_password));
         } else {
             navigateToHome();
         }
