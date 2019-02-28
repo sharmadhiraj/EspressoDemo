@@ -32,8 +32,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login() {
-        if (!isValidUsername(edtUsername.getText().toString())) {
+        if (edtUsername.getText().toString().isEmpty()) {
+            edtUsername.setError(getString(R.string.txt_empty_username));
+        } else if (!isValidUsername(edtUsername.getText().toString())) {
             edtUsername.setError(getString(R.string.txt_invalid_username));
+        } else if (edtPassword.getText().toString().isEmpty()) {
+            edtPassword.setError(getString(R.string.txt_empty_password));
         } else if (!isValidPassword(edtPassword.getText().toString())) {
             edtPassword.setError(getString(R.string.txt_invalid_password));
         } else {

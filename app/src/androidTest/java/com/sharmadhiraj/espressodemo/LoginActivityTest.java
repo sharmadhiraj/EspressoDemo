@@ -37,6 +37,19 @@ public class LoginActivityTest {
     }
 
     @Test
+    public void emptyUsername() {
+        clickLogin();
+        editTextHasError(R.id.edt_username, R.string.txt_empty_username);
+    }
+
+    @Test
+    public void emptyPassword() {
+        enterUsername(VALID_USERNAME);
+        clickLogin();
+        editTextHasError(R.id.edt_password, R.string.txt_empty_password);
+    }
+
+    @Test
     public void invalidUsername() {
         enterUsername("random");
         clickLogin();
