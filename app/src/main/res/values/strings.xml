@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Espresso Demo</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_username">Username</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_welcome_user">Welcome User !</string>
 </resources>
