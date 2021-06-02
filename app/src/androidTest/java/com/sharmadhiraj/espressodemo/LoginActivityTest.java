@@ -3,16 +3,17 @@ package com.sharmadhiraj.espressodemo;
 import android.content.Context;
 
 import androidx.test.espresso.intent.Intents;
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import androidx.test.platform.app.InstrumentationRegistry;
-import androidx.test.rule.ActivityTestRule;
 
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static androidx.lifecycle.Lifecycle.State.STARTED;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
@@ -23,14 +24,14 @@ import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static com.sharmadhiraj.espressodemo.Utils.VALID_PASSWORD;
 import static com.sharmadhiraj.espressodemo.Utils.VALID_USERNAME;
-import static junit.framework.TestCase.assertTrue;
+import static junit.framework.TestCase.assertSame;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class LoginActivityTest {
 
     @Rule
-    public ActivityTestRule<LoginActivity> loginActivityActivityTestRule = new ActivityTestRule<>(LoginActivity.class);
+    public ActivityScenarioRule<LoginActivity> loginActivityActivityTestRule = new ActivityScenarioRule<>(LoginActivity.class);
 
     @BeforeClass
     public static void setUp() {
@@ -100,6 +101,6 @@ public class LoginActivityTest {
 
     private void homeScreenLaunched() {
         intended(hasComponent(HomeActivity.class.getName()));
-        assertTrue(loginActivityActivityTestRule.getActivity().isFinishing());
+        assertSame(loginActivityActivityTestRule.getScenario().getState(), STARTED);
     }
 }

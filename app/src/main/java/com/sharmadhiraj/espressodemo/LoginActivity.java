@@ -2,10 +2,11 @@ package com.sharmadhiraj.espressodemo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import static com.sharmadhiraj.espressodemo.Utils.isValidPassword;
 import static com.sharmadhiraj.espressodemo.Utils.isValidUsername;
